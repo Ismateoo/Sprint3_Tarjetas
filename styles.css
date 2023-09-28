@@ -1,0 +1,17 @@
+.grilla{
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+}
+
+.imagenes{
+    grid-column: 1;
+    background-image: url(img/bg-main-desktop.png);
+    height: 100vh;
+}
+.formulario{
+    grid-column: 2;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
