@@ -4,6 +4,9 @@
     font-weight: 500px;   
 }
 
+body{
+    background-color: hsl(0, 0%, 100%);
+}
 
 .grilla{
     display: grid;
@@ -23,4 +26,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.formulario__label{
+    display: block;
+}
+
+.formulario__input{
+    display: block;
+}
+
+.formulario__input--fecha{
+    display: inline;
 }
