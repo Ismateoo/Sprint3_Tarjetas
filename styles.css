@@ -44,8 +44,17 @@ body{
     
 }
 
+/* .formulario__label--fecha{
+    display: block;
+}
+
+.formulario__label--cvc{
+    display: block;
+}
+ */
 .formulario__input--fecha{
     display: inline;
+    width: 3rem;
 }
 
 .boton{
