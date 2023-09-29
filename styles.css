@@ -18,8 +18,22 @@ body{
     grid-column: 1;
     background-image: url(img/bg-main-desktop.png);
     background-repeat:no-repeat ;
-    height: 100vh;
+    height: 100vh; 
 }
+
+.imagenes__frenteTarjeta{       /* CAMBIAR POSICION TARJETAS */
+    position: absolute;
+    top:10rem;
+    left: 10rem;
+}
+
+.imagenes__atrasTarjeta{
+    position: absolute;
+    top: 25rem;
+    left: 20rem; 
+}
+
+
 .formulario{
     grid-column: 2;
     height: 100vh;
