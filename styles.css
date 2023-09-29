@@ -1,11 +1,13 @@
 .grilla{
     display: grid;
     grid-template-columns: 0.25fr 1fr;
+    width:1440px;
 }
 
 .imagenes{
     grid-column: 1;
     background-image: url(img/bg-main-desktop.png);
+    background-repeat:no-repeat ;
     height: 100vh;
 }
 .formulario{
