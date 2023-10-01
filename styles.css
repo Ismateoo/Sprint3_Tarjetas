@@ -1,81 +1,145 @@
-*{
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
-    font-weight: 500px;   
+* {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 500px;
+}
+/* Contenedores */
+
+.contenedor {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1440px;
 }
 
-body{
-    background-color: hsl(0, 0%, 100%);
+.imagenes {
+  background-image: url(img/bg-main-desktop.png);
+  background-repeat: no-repeat;
+  grid-column: 1;
+  position: relative;
 }
 
-.grilla{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width:1440px;
+.formulario {
+  display: flex;
+  align-items: center;
 }
 
-.imagenes{
-    grid-column: 1;
-    background-image: url(img/bg-main-desktop.png);
-    background-repeat:no-repeat ;
-    height: 100vh; 
+.formulario__grilla {
+  display: grid;
+  grid-template-areas:
+    "nombre nombre"
+    "numero numero"
+    "fecha cvc"
+    "boton boton";
+  width: 60%;
+  gap: 30px;
 }
 
-.imagenes__frenteTarjeta{       /* CAMBIAR POSICION TARJETAS */
+/* Formulario Grilla */
+
+.formulario__nombre {
+  grid-area: nombre;
+}
+
+.formulario__numero {
+  grid-area: numero;
+}
+
+.formulario__fecha {
+  grid-area: fecha;
+}
+
+.formulario__cvc {
+  grid-area: cvc;
+}
+
+.formulario__button {
+  grid-area: boton;
+}
+
+/* Formulario */
+
+.formulario__input {
+  border-radius: 7px;
+  border: 1px solid hsl(270, 3%, 87%);
+  padding: 10px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.formulario__input:focus {   /* VER PORQUE NO FUNCIONA */
+  border: 1px solid rgb(99, 71, 255);
+  border-color: linear-gradient(
+    90deg,
+    rgba(99, 71, 255, 1) 49%,
+    rgba(96, 5, 148, 1) 100%
+  );
+}
+
+.formulario__label {
+  display: block;
+}
+
+.formulario__input--fecha {
+  display: inline;
+  width: 30%;
+}
+.formulario__input--cvc {
+  display: inline;
+}
+
+.boton {
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 50px;
+}
+
+
+/* TARJETAS */
+
+.tarjeta-frente{     
+    position: relative;
+    top:20%;
+    left:20%;
+}
+
+.tarjeta-frente__logo{
     position: absolute;
-    top:10rem;
-    left: 10rem;
+    top: 1px;
+    left: 1px;
 }
 
-.imagenes__atrasTarjeta{
+.tarjeta-frente__numero{
     position: absolute;
-    top: 25rem;
-    left: 20rem; 
+    top: 10px;
+    left: 10px;
+}
+
+.tarjeta-frente__nombre{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+.tarjeta-frente__fecha{
+    position: absolute;
+    top: 200px;
+    left: 200px;
 }
 
 
-.formulario{
-    grid-column: 2;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.tarjeta-atras{
+    position: relative;
+    top:25%;
+    left:30%;
 }
 
-.formulario__label{
-    display: block;
-}
-
-.formulario__input{
-    display: block;
-    border-radius: 7px;
-    border: 1px solid hsl(270, 3%, 87%);
-    /* border: 1px solid rgb(99,71,255);
-    border-color: linear-gradient(90deg, rgba(99,71,255,1) 49%, rgba(96,5,148,1) 100%);   CAMBIA CUANDO ESTOY EN EL INPUT      */ 
-
-
-    /* border: 1px solid hsl(0, 100%, 66%);    CAMBIA CUANDO HAY ERROR*/
-    
-}
-
-/* .formulario__label--fecha{
-    display: block;
-}
-
-.formulario__label--cvc{
-    display: block;
-}
- */
-.formulario__input--fecha{
-    display: inline;
-    width: 3rem;
-}
-
-.boton{
-    background-color: hsl(278, 68%, 11%);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    width: 100%;
-    height: 50px;
+.tarjeta-atras__cvc{
+   position: absolute;
+   top:1px;
 }
