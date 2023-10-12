@@ -1,100 +1,126 @@
 * {
   font-family: "Space Grotesk", sans-serif;
   font-size: 18px;
-  /* font-weight: 500px; */
+  font-weight: 500px;
   margin: 0px;
+  padding: 0px;
 }
-/* Contenedores */
 
+/* CONTENEDORES */
 .contenedor {
-  background-color: hsl(0, 0%, 100%);
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  width: 100vw;
+  grid-template-columns: 1.4fr 1fr;
   height: 100vh;
+  width: 100vw;
   max-width: 1440px;
 }
-
-.imagenes {
+/* CONTENEDOR IMAGENES */
+.contenedor__imagenes {
+  grid-column: 1;
   background-image: url(img/bg-main-desktop.png);
   background-repeat: no-repeat;
-  grid-column: 1;
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* CONTENEDOR FORMULARIO */
+.contenedor__formulario {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  gap: 50px; 
 }
 
 .formulario {
   display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.formulario__fecha-cvc{
+  display: flex;
+  gap: 20px;
+}
+
+.formulario__fecha__mm-yy{
+  display: flex;
+  gap: 10px;
+}
+
+.formulario__fecha{
+  width: 50%;
+  
+}
+.formulario__cvc{
+  width: 50%;
+  
+}
+
+/* CONTENEDOR GRACIAS */
+.contenedor__gracias{
+  grid-column: 2;
+  display: none;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+  gap:40px;
 }
 
-.formulario__grilla {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-    "nombre nombre"
-    "numero numero"
-    "fecha cvc"
-    "boton boton";
-  width: 60%;
-  row-gap: 30px;
-  column-gap: 20px;
+h1{
+  letter-spacing: 3px;
+  color: hsl(278, 68%, 11%);
+  font-size: 27px;
 }
 
-/* Formulario Grilla */
-
-.formulario__nombre {
-  grid-area: nombre;
+p{
+  color: hsl(270, 3%, 87%);
 }
 
-.formulario__numero {
-  grid-area: numero;
+/* FORMULARIO */
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: hsl(278, 68%, 11%);
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 
-.formulario__fecha {
-  grid-area: fecha;
-}
-
-.formulario__cvc {
-  grid-area: cvc;
-}
-
-.formulario__button {
-  grid-area: boton;
-}
-
-/* Formulario */
-
-.formulario__input {
+input {
+  width:100%;
+  box-sizing: border-box;
   border-radius: 7px;
-  border: 1px solid hsl(270, 3%, 87%);
+  border: 2px solid hsl(270, 3%, 87%); 
+  color: hsl(270, 3%, 87%);;
   padding: 10px;
   padding-left: 15px;
-  width: 100%;
 }
 
-/* .formulario__input:focus {   VER PORQUE NO FUNCIONA
-  border: 1px solid rgb(99, 71, 255);
-  border-color: linear-gradient(
-    90deg,
-    rgba(99, 71, 255, 1) 49%,
-    rgba(96, 5, 148, 1) 100%
-  );
-}
- */
-.formulario__label {
-  display: block;
+input:focus{
+  outline: none;    /* saca el borde anterior */
+  border: solid 2px transparent;
+  border-radius: 7px;
+  /* creo una "imagen" con fondo blanco y el contorno de colores */
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, hsl(249, 99%, 64%),hsl(278, 94%, 30%));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  /* 
+  background-origin: especifico el origen de la "imagen"
+  background-clip: hago que la "imagen" se vea dentro del borde 
+  */
 }
 
-.formulario__input--fecha {
-  display: inline;
-  width: 30%;
-}
-.formulario__input--cvc {
-  display: inline;
+.fecha__input {
+  width: 50%;
 }
 
-.boton {
+.formulario__boton{
   background-color: hsl(278, 68%, 11%);
   color: white;
   border: none;
@@ -103,54 +129,109 @@
   height: 50px;
 }
 
+.formulario__boton:hover{
+  cursor: pointer;
+  background-color: blueviolet;
+}
 
 /* TARJETAS */
-
-span{
+span {
   color: white;
 }
 
-.tarjeta-frente{     
-    position: relative;
-    top:20%;
-    left:20%;
+.tarjeta-frente {
+  position: absolute;
+  top: 20%;
+  left: 20%;
 }
 
-.tarjeta-atras{
-  position: relative;
-  top:23%;
-  left:30%;
+.tarjeta-atras {
+  position: absolute;
+  top: 49%;
+  left: 30%;
 }
 
-.tarjeta-frente__logo{
-    position: absolute;
-    top: 20px;
-    left: 30px;
+.tarjeta-frente__logo {
+  position: absolute;
+  top: 10%;
+  left:7%;
 }
 
-.tarjeta-frente__numero{
-    position: absolute;
-    top: 150px;
-    left: 30px;
-    font-size: 30px;
-    word-spacing: 5px;
-    letter-spacing: 2px;
+.tarjeta-frente__numero {
+  position: absolute;
+  top: 55%;
+  left: 7%;
+  font-size: 1.7rem;
+  word-spacing: 5px;
+  letter-spacing: 3px;
 }
 
-.tarjeta-frente__nombre{
-    position: absolute;
-    top: 200px;
-    left: 30px;
+.tarjeta-frente__nombre {
+  position: absolute;
+  top: 80%;
+  left: 7%;
+  word-spacing: 3px;
+  letter-spacing: 1px;
 }
 
-.tarjeta-frente__fecha{
-    position: absolute;
-    top: 200px;
-    left: 350px;
+.tarjeta-frente__fecha {
+  position: absolute;
+  top: 80%;
+  left: 80%;
 }
 
-.tarjeta-atras__cvc{
-   position: absolute;
-   top:105px;
-   left:350px;
+.tarjeta-atras__cvc {
+  position: absolute;
+  top: 44%;
+  left:80%;
+}
+
+
+@media (max-width: 375px) {
+  /* CONTENEDORES */
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+  }
+
+  .contenedor__imagenes{
+    background-image: url(img/bg-main-mobile.png);
+    width: 100%;
+    height: 40%;
+  }
+ 
+  .contenedor__formulario{
+    width: 100%;
+    height: 40%;
+  }
+
+  .contenedor__gracias{
+    width: 100%;
+    height: 40%;
+  }
+
+  /* Boton Continuar */
+  .formulario__boton--continuar{
+    width: 90%;
+  }
+
+  /* FORMULARIO */
+  .formulario{
+    margin: 20px;
+  }
+
+  /* TARJETAS */
+  .tarjeta-frente{
+    transform: scale(0.6);
+    z-index: 1;
+    left: -70px;
+  }
+
+  .tarjeta-atras{
+    transform: scale(0.6);
+    z-index: 0;
+    top: -12px;
+    left: -10px
+  } 
 }
