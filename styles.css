@@ -180,6 +180,24 @@ span {
   left: 80%;
 }
 
+.mes{
+position: absolute;
+top: 80%;
+left: 75%;
+}
+
+.barra{
+  position: absolute;
+  top: 80%;
+  left: 80%;
+}
+
+.anio{
+  position: absolute;
+  top: 80%;
+  left: 82%;
+}
+
 .tarjeta-atras__cvc {
   position: absolute;
   top: 44%;
