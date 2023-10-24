@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="img/favicon-32x32.png">
+    <link rel="icon" href="img/favicon-32x32.png" />
     <title>Sprint 2</title>
   </head>
   <body>
@@ -61,7 +61,8 @@
         <p>We've added your card details</p>
         <button
           class="formulario__boton formulario__boton--continuar"
-          onclick=mostrarFormulario() type="button"
+          onclick="mostrarFormulario()"
+          type="button"
         >
           Continue
         </button>
@@ -77,6 +78,7 @@
               id="nombre__input"
               placeholder="e.g. Jane Appleseed"
             />
+            <span class="mensajeError" id="nombreError"></span>
           </div>
 
           <div class="formulario__numero">
@@ -87,24 +89,31 @@
               id="numero__input"
               placeholder="e.g. 1234 5678 9123 0000"
             />
+            <span class="mensajeError" id="numeroError"></span>
           </div>
 
           <div class="formulario__fecha-cvc">
             <div class="formulario__fecha">
               <label for="fecha" class="fecha__label">EXP. DATE (MM/YY)</label>
               <div class="formulario__fecha__mm-yy">
-                <input
-                  type="text"
-                  class="fecha__input fecha__input--mm"
-                  id="mes__input"
-                  placeholder="MM"
-                />
-                <input
-                  type="text"
-                  class="fecha__input fecha__input--yy"
-                  id="anio__input"
-                  placeholder="YY"
-                />
+                <div class="formulario__fecha--error">
+                  <input
+                    type="text"
+                    class="fecha__input fecha__input--mm"
+                    id="mes__input"
+                    placeholder="MM"
+                  />
+                  <span class="mensajeError" id="mesError"></span>
+                </div>
+                <div class="formulario__fecha--error">
+                  <input
+                    type="text"
+                    class="fecha__input fecha__input--yy"
+                    id="anio__input"
+                    placeholder="YY"
+                  />
+                  <span class="mensajeError" id="anioError"></span>
+                </div>
               </div>
             </div>
 
@@ -116,11 +125,16 @@
                 id="cvc__input"
                 placeholder="e.g. 123"
               />
+              <span class="mensajeError" id="cvcError"></span>
             </div>
           </div>
 
           <div class="formulario__boton">
-            <button class="formulario__boton" onclick=mostrarGracias() type="button">
+            <button
+              class="formulario__boton"
+              onclick="mostrarGracias()"
+              type="button"
+            >
               Confirm
             </button>
           </div>

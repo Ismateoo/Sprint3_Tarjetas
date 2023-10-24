@@ -59,6 +59,11 @@
   
 }
 
+.formulario__fecha--error{
+  display: flex;
+  flex-direction: column;
+}
+
 /* CONTENEDOR GRACIAS */
 .contenedor__gracias{
   grid-column: 2;
@@ -117,7 +122,7 @@ input:focus{
 }
 
 .fecha__input {
-  width: 50%;
+  min-width: 50%;
 }
 
 .formulario__boton{
@@ -204,7 +209,11 @@ left: 75%;
   left:80%;
 }
 
-
+/* Mensajes error */
+.mensajeError{
+  color: red;
+  font-size: 0.8rem;
+}
 @media (max-width: 375px) {
   /* CONTENEDORES */
   .contenedor {
