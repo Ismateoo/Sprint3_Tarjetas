@@ -31,30 +31,30 @@ numeroTarjetaInput.oninput = function (event) {
   numeroTarjetaFrente.innerHTML =
     event.target.value; /* Aca hace referencia al valor del input */
   /* Aca hace referencia al span*/
-};
+}
 
 nombreTarjetaInput.oninput = function (event) {
   nombreTarjetaFrente.innerHTML = event.target.value;
-};
+}
 
 mesTarjetaInput.oninput = function (event) {
   mesTarjetaFrente.innerHTML = event.target.value;
-};
+}
 
 anioTarjetaInput.oninput = function (event) {
   anioTarjetaFrente.innerHTML = event.target.value;
-};
+}
 
 cvcTarjetaInput.oninput = function (event) {
   cvcTarjetaAtras.innerHTML = event.target.value;
-};
+}
 
 /* Funciones verificar datos */
 
 /* Errores Generales */
 function verificarVacio(atributo, error) {
   if (atributo.value.length == 0) {
-    error.innerHTML = "Can´t be blank";
+    error.innerHTML = "Este campo no puede estar vacio";
     atributo.style.borderColor = "red";
     return true;
   } else {
@@ -68,11 +68,7 @@ function verificarVacio(atributo, error) {
 
 function erroresNumero(numero, error) {
   if (numero.value.length == 0) {
-    error.innerHTML = "Can´t be blank";
-    numero.style.borderColor = "red";
-    return true;
-  } else if (numero.value.length != 16) {
-    error.innerHTML = "Tiene que tener 16 caracteres";
+    error.innerHTML = "Este campo no puede estar vacio";
     numero.style.borderColor = "red";
     return true;
   } else if (numero.value.length != 16) {
@@ -90,9 +86,20 @@ function erroresNumero(numero, error) {
   }
 }
 
+/* Poner solo numeros */
+
+mesTarjetaInput.onkeydown = function(event){  /* Cuando se apreta una tecla verifica si es un numero */
+    return !isNaN(event.key)
+}
+anioTarjetaInput.onkeydown = function(event){
+  return !isNaN(event.key)
+}
+cvcTarjetaInput.onkeydown = function(event){
+  return !isNaN(event.key)
+}
+
 /* Cambiar pagina */
 function mostrarGracias() {
-    
     let errorNombre = verificarVacio(nombreTarjetaInput, mensajeErrorNombre);
     let errorMes = verificarVacio(mesTarjetaInput, mensajeErrorMes);
     let errorAnio = verificarVacio(anioTarjetaInput, mensajeErrorAnio);
@@ -107,4 +114,15 @@ function mostrarGracias() {
 function mostrarFormulario() {
   formulario.style.display = "flex";
   gracias.style.display = "none";
+  /* Reinicio inputs y tarjetas */
+  nombreTarjetaInput.value = "";
+  nombreTarjetaFrente.innerHTML = "JANE APPLESEED";
+  numeroTarjetaInput.value = "";
+  numeroTarjetaFrente.innerHTML = "0000 0000 0000 0000";
+  mesTarjetaInput.value = "";
+  mesTarjetaFrente.innerHTML = "00";
+  anioTarjetaInput.value = "";
+  anioTarjetaFrente.innerHTML = "00";
+  cvcTarjetaInput.value = "";
+  cvcTarjetaAtras.innerHTML = "000";
 }
